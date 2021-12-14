@@ -1,0 +1,28 @@
+TOPIC: SETTING BLINKY APPLICATION INSTRUCTION
+Material: ARM Microprocessor (Nucleo-F446RE), USB A-mini-B & STM32CUBEIDE.1.8.0 SOFTWARE & Computer.
+1.	Install & open the STM32CUBEIDE.1.8.0 application by connect the arm microprocessor to the computer.
+2.	Click start new STM32 project. Properties for STM32 project will come up.
+3.	Select Board Selector-NUCLEO-F446RE then click ‘Next’.
+4.	Name the Project-Blinky Project-Finish- Board Project Options (properties)-click ‘Yes’-Open Associated Perspective(properties)-click ‘Yes’.
+5.	LD2 [Green LED]-PA5 to blink-click ‘Save’-click Device Configuration Tool Code Generation (to generate the code)-click ‘Yes’. (Already set by the application.no need to change the configuration).
+6.	Use ‘main.c’- Go to ‘while’ coding area. Others coding area no need to code first.
+   While(1)
+{ 
+HAL_GPIO_WritePin(GPIOA,GPIO PIN_5, 1); 
+HAL_Delay (1000);
+
+HAL_GPIO_WritePin(GPIOA,GPIO PIN_5, 0); 
+HAL_Delay (1000);
+}	
+a)	Click CTRL + Spacebar and select this command (HAL_GPIO_WritePin (GPIOX, GPIO Pin, Pinstate);
+b)	Click CTRL + Spacebar and select this command HAL_Delay(uint32_Delay); void 
+c)	Change instruction inside the bracket as state by the left instruction coding shown.
+d)	Pinstate-1(ON), 0(OFF) both states are needed due the while instruction is loop state instruction.
+
+
+7.	Click ‘Save’ and Run LED.
+8.	After Run LED- Edit Configuration Properties-Click ‘OK’- ST-LINK Firmware Verification Properties-Click ‘Yes’.
+9.	ST-Linkupgrade 3.3.6 (properties)- Click ‘Open in update mode’- Click ‘Upgrade’.
+10.	Run again the compiler to be compile into the arm microprocessor.
+11.	The LD2 on the dev. Board can be observe which the LED will blink according to the delay time that set up on the ‘While’ instruction.
+12.	Disconnect microprocessor to the computer by removing USB application on the computer.
